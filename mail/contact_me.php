@@ -20,14 +20,18 @@ if (isset($_POST['name']) &&
    $institution = $_POST['institution'];
    // optional field
    if (isset($_POST['special_needs'])) $special_needs = $_POST['special_needs'];
+   if (isset($_POST['why_participate'])) $why_participate = $_POST['why_participate'];
 
    // create the email and send the registration message to the folks in charge
    // $to, $from, $replyto are set in address.php config file for exclusion from the Github repo
    include ("address.php");
-   $email_subject = "CHAS Registration for $name";
-   $email_body = "Registration for Cultural Heritage at Scale: Crowdsourcing with a Human Face, June 2, 2017\n\nName: $name\nEmail: $email\nPhone: $phone\nInstitution: $institution\nSpecial Needs: ";
+   $email_subject = "Sustaining Television News Registration for $name";
+   $email_body = "Registration for Sustaining Television News for the Next Generation, March 8-9, 2018\n\nName: $name\nEmail: $email\nPhone: $phone\nInstitution: $institution\nSpecial Needs: ";
    if (!empty($special_needs)) $email_body .= $special_needs;
    else $email_body .= "None";
+   $email_body .= "\nWhy participate: ";
+   if (!empty($why_participate)) $email_body .= $why_participate;
+   else $email_body .= "[No response given]";
    $headers = "From: $from\n";
    $headers .= "Reply-To: $replyto";
    mail($to,$email_subject,$email_body,$headers);
