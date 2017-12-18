@@ -14,6 +14,7 @@ $(function() {
             var phone = $("input#phone").val();
             var institution = $("input#institution").val();
             var special_needs = $("textarea#special_needs").val();
+            var why_participate = $("textarea#why_participate").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -27,7 +28,8 @@ $(function() {
                     phone: phone,
                     email: email,
                     institution: institution,
-                    special_needs: special_needs
+                    special_needs: special_needs,
+                    why_participate: why_participate
                 },
                 cache: false,
                 success: function() {
