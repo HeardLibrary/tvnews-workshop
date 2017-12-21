@@ -39,7 +39,7 @@ $(function() {
                         .html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Thank you for registering, "+firstName+"!</strong>");
+                        .append("<strong>Thank you for applying, "+firstName+"!</strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
